@@ -1,0 +1,10 @@
+Number of equations/amplitudes : 2
+Coupling ( \tau_{LC} ) : 1
+Energydif : 10
+rkstep : 1.0E-06
+alpha : 4.0
+nmax (bessel functions) : 30
+ti : 0
+tf : 60
+moments : 600
+omega : 2

@@ -1,0 +1,129 @@
+% Chapter 2
+
+\chapter{Amplitude equations} % Main chapter title
+
+\label{Chapter2} % For referencing the chapter elsewhere, use \ref{Chapter2} 
+
+%----------------------------------------------------------------------------------------
+
+% Define some commands to keep the formatting separated from the content 
+
+%----------------------------------------------------------------------------------------
+
+
+ 
+
+Here we will derive the amplitudes equations with aim to obtain the effective Hamiltonian of the two level system. By using the time-dependent Schrodinger equation with the same Hamiltonian as in Chapter 1 \ref{Chapter1} $\widehat{\overline{H}}(t)$ = $\widehat{H_{\varepsilon}} +\widehat{\overline{H}}_{\tau}(t)$ and $\dfrac{\partial}{\partial t} \vert \Psi (t) \rangle = c_L (t) \vert L \rangle + c_C (t) \vert C \rangle + c_R(t) \vert R \rangle$ we arrive at the following equations (with $\hbar=1$):
+
+\begin{equation} \label{eq:2.1}
+\dfrac{\partial}{\partial t} c_L (t) = -i \left( \varepsilon_L c_L(t) - \sum_{\substack{n=-\infty}}^{\infty} \overline{\tau}_{LC,n} e^{in\omega t } c_C (t) \right)
+\end{equation}
+\begin{equation} \label{eq:2.2}
+\dfrac{\partial}{\partial t} c_C (t) = -i \left( \varepsilon_C c_C(t) - \sum_{\substack{n'=-\infty}}^{\infty} \overline{\tau}_{CL,n'} e^{i'n\omega t } c_L (t) -  {\tau}_{CR} c_R(t) \right)
+\end{equation}
+\begin{equation} \label{eq:2.3}
+\dfrac{\partial}{\partial t} c_R (t) = -i \left( \varepsilon_R c_R(t) - {\tau}_{RC} c_C(t)  \right)
+\end{equation}
+
+By transforming the amplitudes as $\overline{c}_m = {c_m} e^{i \varepsilon_m t}$ the above equations are becoming 
+
+\begin{equation} \label{eq:2.4}
+i\dfrac{\partial}{\partial t} \overline{c}_L (t) = - \left( \sum_{\substack{n=-\infty}}^{\infty} \overline{\tau}_{LC,n} e^{i(\varepsilon_L - \varepsilon_C + in\omega )t } \overline{c}_C (t) \right)
+\end{equation}
+\begin{equation} \label{eq:2.5}
+i\dfrac{\partial}{\partial t} \overline{c}_C (t) = - \left( \sum_{\substack{n'=-\infty}}^{\infty} \overline{\tau}_{CL,n'} e^{i(\varepsilon_C - \varepsilon_L + n'\omega) t } \overline{c}_L (t) +  {\tau}_{CR} \overline{c}_R(t) e^{i(\varepsilon_C - \varepsilon_R)t} \right)
+\end{equation}
+\begin{equation} \label{eq:2.6}
+i\dfrac{\partial}{\partial t} \overline{c}_R (t) = - \left( {\tau}_{RC} e^{i(\varepsilon_R - \varepsilon_C )t} \overline{c}_C(t)  \right)
+\end{equation}
+
+Then by doing formal integration to eq.\ref{eq:2.5} we arrive at
+
+
+\begin{equation} \label{eq:2.7}
+c(t) = - \left( \sum_{n'}  \overline{\tau}_{CL,n'}  \int_0^t {e^{i(\varepsilon_C - \varepsilon_L + n'\omega) t } \overline{c}_L (t)}  \ud t'+  {\tau}_{CR} \int_0^t e^{i(\varepsilon_C - \varepsilon_R)t} \ud t' \overline{c}_R(t) e \right)
+\end{equation}
+
+We are intersted at the case which $\tau_{CL,n'} << \varepsilon_C-\varepsilon_L + n'\omega$ and $\tau_{CR} << \varepsilon_C-\varepsilon_R $. Then during the time the exponent experiences many oscillations the amplitudes $\overline{C}_L$ and $\overline{C}_R$ will not change much. Then they can be evaluated at time $t'=t$ and factored out of the integral. 
+
+\begin{equation} \label{eq:2.8}
+\overline{c}_C (t) = \left( \sum_{n} \overline{\tau}_{CL,n'} \left[ \dfrac{ ( e^{i(\varepsilon_C - \varepsilon_L + n'\omega) t } -1) }{ \varepsilon_C - \varepsilon_L + n'\omega } \right] \overline{c}_L (t) + {\tau}_{CR}   \left[  \dfrac{e^{i(\varepsilon_C - \varepsilon_R)t} - 1}{ \varepsilon_C - \varepsilon_R } \right] \overline{c}_R(t) \right)
+\end{equation}
+
+Then eq.\ref{eq:2.4} is becoming 
+
+\begin{multline}
+i\dfrac{\partial}{\partial t} \overline{c}_L (t)=  \sum_{n}  \overline{\tau}_{LC,n}  \sum_{n'} \frac{\overline{\tau}_{CL,n'} } { \varepsilon_C -\varepsilon_L + n' \omega } \left(  { e^{ i (n+n')\omega t } } - e^{i ( \varepsilon_L - \varepsilon_C + n'\omega ) t } \right) \overline{c}_L(t) 
+\\
++ \sum_{n}  \dfrac{ \overline{\tau}_{LC,n}  \tau_{CR}}{ { \varepsilon_C - \varepsilon_R }  } \left(  e^{i ( \varepsilon_L - \varepsilon_R + n \omega )  t } - e^{i ( \varepsilon_C - \varepsilon_R )  t } \right) \overline{c}_R(t) 
+\end{multline}
+
+Then by neglecting the fast oscillating terms $ e^{i ( \varepsilon_L - \varepsilon_C + n'\omega ) t } , e^{i ( \varepsilon_C - \varepsilon_R )  t } $ we arrive at
+
+\begin{multline} \label{eq:2.9}
+i\dfrac{\partial}{\partial t} \overline{c}_L (t)=  \sum_{n}  \overline{\tau}_{LC,n}  \sum_{n'} \frac{\overline{\tau}_{CL,n'} } { \varepsilon_C -\varepsilon_L + n' \omega } { e^{ i (n+n')\omega t } } \overline{c}_L(t) 
+\\
++ \sum_{n} \dfrac{  \overline{\tau}_{LC,n}  \overline{\tau}_{CR}}{ { \varepsilon_C - \varepsilon_R }  } e^{i ( \varepsilon_L - \varepsilon_R + n \omega )  t } \overline{c}_R(t) 
+\end{multline}
+
+Following the same precedure for the other amplitude we arrive at 
+\begin{multline} \label{eq:2.10}
+i\dfrac{\partial}{\partial t} \overline{c}_R (t)=  \sum_{n'}
+\frac{ \overline{\tau}_{RC} \overline{\tau}_{CL,n'}  } { \varepsilon_C -\varepsilon_L + n' \omega } e^{i ( \varepsilon_R - \varepsilon_L + n' \omega )  t }   \overline{c}_L(t) 
++  \dfrac{  \overline{\tau}_{RC}  \overline{\tau}_{CR}}{ { \varepsilon_C - \varepsilon_R }  }  \overline{c}_R(t) 
+\end{multline}
+
+\section{Numerical solutions: system of left and centre quantum dots}
+
+
+
+Firslty we consider part of the above system and we solve the amplitude equations numerically. We take only the left and right quantum dots and we have the following coupled system:
+
+\begin{equation} \label{eq:2.11}
+\dfrac{\partial}{\partial t} c_L (t) = i \sum_{\substack{n=-\infty}}^{\infty} \overline{\tau}_{LC,n} e^{in\omega t } c_C (t) 
+\end{equation}
+\begin{equation} \label{eq:2.12}
+\dfrac{\partial}{\partial t} c_C (t) = -i \left( \varepsilon_{CL} c_C(t) -  \sum_{\substack{n'=-\infty}}^{\infty} \overline{\tau}_{CL,n'} e^{i'n\omega t } c_L (t) \right)
+\end{equation}
+
+where we have defined the energy difference between the C and L dots as $\varepsilon_{CL}$
+
+\subsection{Reaching far-off resonance}
+
+The first special case that we examine is when the frequency of the field is $\omega$ is larger than the energy difference of the dots. \\
+\\
+Specifically, we take $\varepsilon_{CL}=0$ and we apply $\omega=2,5,10,20$. Also, we have chosen $\alpha=1.5$ and $n \subset \left[ -30,30\right]$. We compare the results with the well-know case of Rabi oscillations, which is applied in our system for taking only n=0 from the sum over n (red line). 
+Then,  we can see  from the fig.\ref{fig:2.1} that as we increase the frequency $\omega$ of the field we reach the far-off resonance condition where the system is affected very little from the field. At that case the system is oscillating mainly due to the coupling between the dots. As we can see from fig.2.1.D the two curves, one for $n \subset \left[ -30,30\right]$ (black) and the other one for n=0 (red)  are almost identical which verifies that the dominant n from the sum is n=0.
+
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.5]{Figures/de0ch_omega.eps}
+\decoRule
+\caption[Far-off resonance]{Population of L dot, energy difference $\varepsilon_{CL}=0$, $\alpha=1.5$. Red line only zero bessel function (equivalant to $\omega=0$). \\Black lines for n in [-30,30] and \\ (A) : $\omega=2\tau_{LC}$ , (B) : $\omega=5\tau_{LC}$,(C) : $\omega=10\tau_{LC}$ ,(D) : $\omega=20\tau_{LC}$}
+\label{fig:2.1}
+\end{figure}
+
+Then we consider the case where $\varepsilon_{CL}=2\tau_{LC}$ and $\omega$ is greater than $2\tau_{LC}$. As we observe from the following diagrams there is no population transfer between the dots. That was expacted since the coupling between the dots is smaller than the energy difference between them. So, it is not enough to transfer the population. Also, the chosen frequencies of the field (fig.\ref{fig:2.2}) multilpled by the factor n do not match the specific energy differences.
+
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.5]{Figures/de2ch_omega.eps}
+\decoRule
+\caption[Far-off resonance]{Population of L dot, energy difference $\varepsilon_{CL}=2\tau_{LC}$, $\alpha=1.5$. Red line only zero bessel function (equivalant to $\omega=0$). \\Black lines for n in [-30,30] and \\ (A) : $\omega=5\tau_{LC}$ , (B) : $\omega=10\tau_{LC}$,(C) : $\omega=20\tau_{LC}$ ,(D) : $\omega=30\tau_{LC}$}
+\label{fig:2.2}
+\end{figure}
+
+Then we examine the case where $\varepsilon_{CL}=0.5\tau_{LC}$ and $\omega$ is again greater than the energy difference. As we observe from the following diagrams we have significant population transfer between the dots. We can see from the fig. That was expacted since the coupling between the dots is smaller than the energy difference between them. So, it is not enough to transfer the population. Also, the chosen frequencies of the field (fig.\ref{fig:2.2}) multilpled by the factor n do not match the specific energy differences.
+
+
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.5]{Figures/de05ch_omega.eps}
+\decoRule
+\caption[Far-off resonance]{Population of L dot, energy difference $\varepsilon_{CL}=0.5\tau_{LC}$, $\alpha=1.5$. Red line only zero bessel function (equivalant to $\omega=0$). \\Black lines for n in [-30,30] and \\ (A) : $\omega=5\tau_{LC}$ , (B) : $\omega=10\tau_{LC}$,(C) : $\omega=20\tau_{LC}$ ,(D):$\omega=20\tau_{LC}$}
+\label{fig:2.3}
+\end{figure}
+

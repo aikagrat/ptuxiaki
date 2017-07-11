@@ -1,0 +1,404 @@
+% Chapter 1
+
+\chapter{Chapter Title Here} % Main chapter title
+
+\label{Chapter1} % For referencing the chapter elsewhere, use \ref{Chapter1} 
+
+%----------------------------------------------------------------------------------------
+
+% Define some commands to keep the formatting separated from the content 
+\newcommand{\keyword}[1]{\textbf{#1}}
+\newcommand{\tabhead}[1]{\textbf{#1}}
+\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\file}[1]{\texttt{\bfseries#1}}
+\newcommand{\option}[1]{\texttt{\itshape#1}}
+
+%----------------------------------------------------------------------------------------
+
+
+
+\paragraph{Long range transfer}
+
+We will first discuss the simplest model of the TQDs, without an AC field coupled to the system. We describe the system with the Hamiltonian $\widehat{H}_{t}$= $\widehat{H}_{0}$ +$\widehat{H}_{\tau}$ =$\sum_{i} \varepsilon_{i}{\widehat{c}_{i}}^{\dagger} c_{i} - \sum_{i} \tau_{i,i+1}{\widehat{c}_{i}}^{\dagger} c_{i+1}$. Then the Hamiltonian of the system has the following form : 
+
+\begin{equation} \label{eq:1}
+\widehat{H}_{0}=\begin{bmatrix}
+\varepsilon_{L} & \tau_{LC} & 0 \\
+\tau_{LC} & \varepsilon_{C}  & \tau_{CR} \\    
+0 & \tau_{CR} & \varepsilon_{L} \\
+\end{bmatrix} 
+\end{equation}
+ 
+ where $\varepsilon_{i}$ are the QD onsite energies and $\tau_{i,i+1}$ describe the couplings between the nearest-neighbors since $\tau_{LR}$ is equal to zero. 
+ 
+We are especially intersted in the case where $\varepsilon_{L}$=$\varepsilon_{R}$=$\varepsilon$ since then we have the following eigenvalues and eigenvectors (not normalized) : \\
+ $E_{LR}=\varepsilon$ and $\vert$LR$\rangle$ = $\tau_{CR}$  $\vert$L$\rangle$ - $\tau_{LC}$ $\vert$R$\rangle$ 
+ \\
+ \\
+ $E_{\pm}= \varepsilon_{C}$ + $ \varepsilon $ $\pm$ $\delta_{\tau}$ and $\vert$LR$\rangle$ = $\tau_{CR}$  $\vert$L$\rangle$ + $\dfrac{\delta_{c}\pm\delta_{\tau}}{2}$ $\vert$C$\rangle$ + $\tau_{LC}$ $\vert$R$\rangle$ 
+ \\
+  \begin{small}
+ where 
+ $\delta_{\tau}$ = $\sqrt{\delta_{C}^{2}+4\times\left( \tau_{CR}^{2} + \tau_{CR}^{2}\right) }$
+ and  $\delta_{c}$= $\varepsilon_{C}$-$\varepsilon$  
+ \end{small}
+ 
+The above description suggests that there is a senario where the electron is delocalized between the left and the right dots with the center being only virtually occupied. This is exactly the long-range transfer that we are intersted in.
+ 
+
+\paragraph{Photon assisted long range transfer}
+
+
+Here we will discuss the case where $\varepsilon_{L}$ is not equal to $\varepsilon_{R}$ , but $\varepsilon_{L}$-$\varepsilon_{R}$ +$n\hslash\omega$ = 0 and an AC singal is coupled to the left dot. It is assumed to have the following form $\widehat{H}_{ac}$ = $\dfrac{V_{ac}}{2}\cos(\omega t)\widehat{n}_L$ with $V_{ac}$ being the amplitude of the field and $\omega$ being the frequency. The Hamiltonian of the system is described by  $\widehat{H}(t)$= $\widehat{H}_{\varepsilon} +\widehat{H}_{\tau}+\widehat{H}_{ac}(t)$= $\sum_{i} \varepsilon_{i}{\widehat{c}_{i}}^{\dagger} c_{i} - \sum_{i} \tau_{i,i+1}{\widehat{c}_{i}}^{\dagger} c_{i+1} + \dfrac{V_{ac}}{2}\cos(\omega t)\widehat{n}_L$ . It is convenient to use a unitary transformation to the above Hamiltonian and transfer the time dependence to the coupling terms.  
+\\
+   \\
+   Using the following unitary transformation : $\widehat{\overline{H}}(t)$  = $\widehat{U}(t)(\widehat{H}(t)-i\hbar\partial_t){\widehat{U}}^{\dagger}(t)$ with $\widehat{U}(t)$= $ exp[ (\frac{i}{\hbar})\int_0^{t} \widehat{H}_{ac} (t') \mathrm{d}t']$ we have $\widehat{\overline{H}}(t)$ = $\widehat{H_{\varepsilon}} +\widehat{\overline{H}}_{\tau}(t)$ where 
+ 
+ \begin{equation} \label{eq:2}
+\widehat{\overline{H}}_{\tau}(t) = - \left\lbrace  \sum_{\substack{n={-\infty}}}^{\infty} J_n (\alpha) \tau_{LC} e^{i n \omega t} {\widehat{c}_{L}}^{\dagger} c_{C} + \tau_{C,R}{\widehat{c}_{C}}^{\dagger} c_{R} + H.c. \right\rbrace 
+ \end{equation}
+ 
+ The above transformation leaves the diagonal matrix elements unaffected and transfers the time-dependence to the coupling terms (see \ref{subsection1.1.1} ).
+
+We define as  $\overline{\tau}_{LC,n} = J_n (\alpha) \tau_{LC} $ and $\overline{\tau}_{CL,n}= (-1)^{n} J_n (\alpha) \tau_{CL}$ 
+ \\
+ 
+ Finally, we have the following time-dependent Schrodinger equation 
+ \\$\widehat{H}_{eff}$ $\vert$ $\Psi_{s}$(t) $\rangle$ =$\left[ \widehat{H_\varepsilon} + \widehat{\overline{H}}_{\tau}(t)\right]\vert\Psi_{s}(t) \rangle = i\hslash\dfrac{\partial}{\partial t }\vert\Psi_{s}(t) \rangle$ where  $\widehat{H}_{\varepsilon}$ is well understood and exactly solvable and we can assume $\widehat{H}_{\tau}$ as a petrubation.  
+\\
+
+ By transferring the system to the interaction picture we have \\ $\vert$ $\Psi_{S}$(t) $\rangle = exp\left[ -i \hbar^{-1}\widehat{H_{\varepsilon}}(t-t_{0}) \right]  \vert \Psi_{I} (t) \rangle$ and due to the petrubation we can write $\vert$ $\Psi_{I}$(t)$\rangle$ = $ U(t,t_{0}) \vert$ $\Psi_{I}(t_{0})\rangle$ =  $ e ^{ \frac{-i}{\hbar}\int_{t_0}^{t} \widehat{H}_{\tau,I} (t') \mathrm{d}t'} \vert\Psi_{I}(t_{0})\rangle$. Then, the above Schrodinger equation becomes 
+ 
+  \begin{multline} \label{eq:3}
+ \widehat{H}_{eff} \vert \Psi_{s} (t) \rangle =  \widehat{H_{\varepsilon}}  e^ {-i \hbar^{-1} \widehat{H_{\varepsilon}} (t-t_{0}) } U(t,t_{0}) \vert\Psi_{I}(t_{0})\rangle + 
+ i \hbar e^{-i \hbar^{-1} \widehat{H_{\varepsilon}}(t-t_{0})} \dfrac{\partial}{\partial t }  U(t,t_{0}) \vert\Psi_{I}(t_0)\rangle 
+ \\
+ = \widehat{H_{\varepsilon}} \vert \Psi_{s} (t) \rangle + i \hbar e^{-i \hbar^{-1} \widehat{H_{\varepsilon}}(t-t_{0})} \dfrac{\partial}{\partial t } U(t,t_{0}) \vert\Psi_{I}(t_0)\rangle 
+ \end{multline}
+ 
+ Since a function  of an operator is defined throught its expansion in a Taylor series we can write 
+
+\begin{equation} \label{eq:4}
+  U(t,t_{0}) = 1- \frac{i}{\hbar}\int_{t_0}^{t} \mathrm{d}t_1 \widehat{H}_{\tau,I} (t_1) - \frac{1}{\hbar^2}\int_{t_0}^{t} \mathrm{d}t_1 \int_{t_0}^{t_1} \mathrm{d}t_2  \widehat{H}_{\tau,I} (t_1) \widehat{H}_{\tau,I} (t_2)
+\end{equation}
+
+We are intersted in the coupling between $\vert$L$\rangle$ and $\vert$R$\rangle$ which is not provided from the first two terms of the expansion. That was expected because we have seen from the undriven case there is not direct coupling between these two states. That is why in our calculations we use the second order of the expansion of the time evolution operator. 
+
+..image..
+
+and we arrive to the following equations with $\hbar=1$ ( \ref{subsection1.1.2} )
+
+\begin{multline} \label{eq:5}
+U^{2}(t,0) \vert L \rangle = \sum_{\substack{n=-\infty}}^{\infty} \frac{\overline{\tau}_{CL,n} } { \varepsilon_C -\varepsilon_L + n \omega } [ 
+  \sum_{n'} \overline{\tau}_{LC,n'} \left(  \dfrac{ e^{ i (n+n')\omega t } -1}{ ( n+n' ) \omega } - \dfrac{ e^{i ( \varepsilon_L - \varepsilon_C + n'\omega ) t } - 1 } { \varepsilon_L - \varepsilon_C + n'  \omega  } \right)    \vert L \rangle 
+\\
++\tau_{RC} \left(  \dfrac{ e^{i ( \varepsilon_R - \varepsilon_L + n \omega )  t } - 1 } { \varepsilon_R - \varepsilon_L + n \omega  } - \frac{ e^{i ( \varepsilon_R - \varepsilon_C )  t } - 1 } { \varepsilon_R - \varepsilon_C } \right)  \vert R \rangle ] 
+\end{multline}
+
+\begin{multline} \label{eq:6}
+U^{2}(t,0) \vert R \rangle = \sum_{\substack{n'=-\infty}}^{\infty} \frac{\overline{\tau}_{LC,n'} {\tau}_{CR}  } { \varepsilon_C -\varepsilon_R } [ \left(  \dfrac{ e^{i ( \varepsilon_L - \varepsilon_R + n'\omega ) t } - 1 } { \varepsilon_L - \varepsilon_R + n'  \omega  } - \dfrac{ e^{i ( \varepsilon_L - \varepsilon_C + n'\omega ) t } - 1 } { \varepsilon_L - \varepsilon_C + n'  \omega  } \right)    \vert L \rangle 
+\\
++ \dfrac{ \tau_{RC} \tau_{CR} }{ \varepsilon_C - \varepsilon_R } \left(  \dfrac{t}{i}- \frac{ e^{i ( \varepsilon_R - \varepsilon_C )  t } - 1 } { \varepsilon_R - \varepsilon_C } \right)  \vert R \rangle ] 
+\end{multline}
+
+
+We are also intrested in the case where the centre dot is decoupled from any resonant transition so as to have the following image : 
+
+That is equivalant to $\tau_{LC} \ll \varepsilon_L-\varepsilon_C +\nu \hbar \omega$ and $\tau_{CR} \ll \varepsilon_R-\varepsilon_C$. So the following terms are far from the resonant and we can neglect them since they are oscillating very fast : 
+
+\begin{equation} \label{eq:7}
+ \dfrac{ e^{i ( \varepsilon_L - \varepsilon_C + \nu' \hbar \omega ) t \backslash \hbar } - 1 } { \varepsilon_L - \varepsilon_C + \nu' \hbar \omega  } \qquad  , \qquad
+ \dfrac{ e^{i ( \varepsilon_R - \varepsilon_C )  t \backslash \hbar   } - 1 } { \varepsilon_R - \varepsilon_C}
+ \end{equation}
+ 
+  
+With the above approximations equations 11 and 12 become :
+ 
+ \begin{multline} \label{eq:8}
+U^{2}(t,0) \vert L \rangle =  \sum_{\substack{n=-\infty}}^{\infty} \frac{\overline{\tau}_{CL,n} } { \varepsilon_C -\varepsilon_L + n \omega } 
+  \sum_{n'} \overline{\tau}_{LC,n'} \left(  \dfrac{ e^{ i (n+n')\omega t } -1}{ ( n+n' ) \omega } \right)    \vert L \rangle 
++\tau_{RC} \left(  \dfrac{ e^{i ( \varepsilon_R - \varepsilon_L + n \omega )  t } - 1 } { \varepsilon_R - \varepsilon_L + n \omega  } \right)  \vert R \rangle 
+\end{multline}
+
+\begin{multline} \label{eq:9}
+U^{2}(t,0) \vert R \rangle = \sum_{\substack{n'=-\infty}}^{\infty} \frac{\overline{\tau}_{LC,n'} {\tau}_{CR}  } { \varepsilon_C -\varepsilon_R }  \left(  \dfrac{ e^{i ( \varepsilon_L - \varepsilon_R + n'\omega ) t } - 1 } { \varepsilon_L - \varepsilon_R + n'  \omega  } \right)    \vert L \rangle 
++ \dfrac{ \tau_{RC} \tau_{CR} }{ \varepsilon_C - \varepsilon_R } \left(  \dfrac{t}{i} \right)  \vert R \rangle 
+\end{multline}
+
+
+Transforming back to the Schrodinger picture by using equations (\ref{eq:8}) and (\ref{eq:9}) to equation (\ref{eq:3}), we arrive at the effective Hamiltonian : 
+
+\begin{multline} \label{eq:10}
+\widehat{H}_{eff}= \begin{bmatrix}
+\varepsilon_L - \sum_{\nu} \sum_{\nu'} {\dfrac { \overline{\tau}_{LC,\nu'} \overline{\tau}_{CL,\nu} } {\varepsilon_C - \varepsilon_L + \nu \omega} e^{ i (\nu+\nu')\omega t } }
+& -\sum_{\nu'} { \dfrac{  \overline{\tau}_{LC,\nu'} {\tau}_{CR} } {\varepsilon_C - \varepsilon_R} e^{ i \nu'\omega t }}
+\\
+\\
+-\sum_{\nu}{\dfrac{ {\tau}_{RC} \overline{\tau}_{CL,\nu}  } {\varepsilon_C - \varepsilon_L + \nu \omega } e^{ -i \nu\omega t }} 
+& \varepsilon_R - \dfrac{\tau_{RC} \tau_{CR} }{ \varepsilon_C - \varepsilon_ R }
+\end{bmatrix} 
+\end{multline}
+
+From eq.\ref{eq:10} we can see that the coupling terms have the expected cotunneling-like form. They contain the coupling due to both barriers $\overline{\tau}_{LC,\nu} {\tau}_{CR} $ and the renormalization due to the Bessel functions $\overline{\tau}_{LC,\nu}$= $\tau_{LC} J_{\nu}(\alpha)$ . Also, the coupling is decreased as $\varepsilon_L + \nu   \omega$ becomes large than  $\varepsilon_C $ which suggests that the tunneling is stronger through an intermediate virtual state ??
+\\ (as ti is represented in the picture)
+
+\paragraph{Rotating wave approximation(RWA)}
+
+The effective Hamiltonian eq.(\ref{eq:10}) is equivalant to that of a driven two level system, $\vert \overline{L} \rangle$ and $\vert \overline{R} \rangle$. We want to investigate the case where $\overline{\varepsilon_R}$ - $\overline{\varepsilon_L}$= $\hbar \nu \omega$. Thus we can apply the RWA that neglects any off-resonant transition by transforming equation (\ref{eq:10}) into the rotating frame, $\widehat{H}_{RWA}$= $ V^{\dagger} (\widehat{H}_{eff}-i\hbar\partial_t) V$ , with the unitary vector $V$ = ${\widehat{c}_{L}}^{\dagger} c_{L}$ + $e^{-i\nu\omega t} {\widehat{c}_{R}}^{\dagger} c_{R}$ ( \ref{AppendixC} ). Finally, we have (with $\hbar=1$)
+
+\begin{equation} \label{eq:11}
+\widehat{H}_{eff}= \begin{bmatrix}
+\varepsilon_L - \dfrac  {\overline{\tau}_{LC,n'} \overline{\tau}_{CL,n}}  {\varepsilon_C - \varepsilon_L + n \omega}  
+& - \dfrac{  \overline{\tau}_{LC,n} {\tau}_{CR} } {\varepsilon_C -  \varepsilon_L-n\omega} 
+ \\ 
+\\
+-\dfrac{ {\tau}_{RC} \overline{\tau}_{CL,-n}  } {\varepsilon_C -\varepsilon_L - n \omega } 
+& \varepsilon_R - \dfrac{\tau_{RC}\tau_{RC} }{ \varepsilon_C - \varepsilon_R} - n \omega
+\end{bmatrix} 
+=\begin{bmatrix}
+ & \overline{\varepsilon}_{L,n} & -g_{LR,n} 
+\\
+& -g_{RL,n}  & \overline{\varepsilon}_{R}- n\omega
+\end{bmatrix}
+\end{equation}
+
+\section{Calculations}
+
+\subsection{Calculation of equation 1.2} \label{subsection1.1.1}
+
+We have the hamiltonian  $\widehat{H'}(t)$=$\widehat{H}_{\tau}+\widehat{H}_{ac}(t)$ and using the following unitary transformation :
+\begin{center}
+$\widehat{\overline{H}}_{\tau}(t)$  = $\widehat{U}(t)(\widehat{H'}(t)-i\hbar\partial_t){\widehat{U}}^{\dagger}(t)$  with
+
+ $\widehat{U}(t)$= $ exp \left[  (\frac{i}{\hbar})\int_0^{t} \widehat{H}_{ac} (t') \mathrm{d}t'\right] =exp \left[   z\sin(\omega t) \right] = e^{iz\sin(\omega t) } $
+ \\where z=$\dfrac{V_{ac}}{2\hbar\omega}$  we have:
+\end{center} 
+
+\begin{multline} \label{eq:12}
+\widehat{\overline{H}}_{\tau}(t)= \widehat{U} (t)(\widehat{H}_{\tau}+\widehat{H}_{ac}){\widehat{U}}^{\dagger}(t) - i \hbar\widehat{U}(t)( \frac{i}{\hbar}\widehat{H}_{ac}){\widehat{U}}^{\dagger}(t) 
+=\widehat{U} (t)(\widehat{H}_{\tau}){\widehat{U}}^{\dagger}(t) 
+\\
+= -\widehat{U} (t)\sum_{i} (\tau_{i,i+1}{\widehat{c}_{i}}^{\dagger} c_{i+1} + H.c.){\widehat{U}}^{\dagger}(t) 
+= -\widehat{U}(t)({\widehat{c}_{L}}^{\dagger} c_{C}+\tau_{C,R}{\widehat{c}_{C}}^{\dagger} c_{R} + H.c.){\widehat{U}}^{\dagger}(t)
+\end{multline}
+\\
+Since,  $n_L$  acts on the L dot we have $\widehat{U}(t)(\tau_{C,R}{\widehat{c}_{C}}^{\dagger} c_{R}){\widehat{U}}^{\dagger}(t)$= $\tau_{C,R}{\widehat{c}_{C}}^{\dagger} c_{R}$ and the same for the Hermitian conjugate.
+
+On the other hand, for the first term of equation (\ref{eq:4})
+
+\begin{equation} \label{eq:13}
+(\widehat{U}(t)(\tau_{ LC}{\widehat{c}_{L}}^{\dagger} c_{C}){\widehat{U}}^{\dagger}(t) =  e^{ z\sin(\omega t) \widehat{n}_L} \left( \tau_{ LC} { \widehat{c}_{L}}^{\dagger} c_{C} \right)  e^{- z\sin(\omega t){\widehat{n}_L}^{\dagger}}
+\end{equation}
+
+and using again the fact that a function of an operator is defined throught its expansion in a Taylor series we can write
+\begin{equation} \label{eq:14}
+e^{ iz\sin(\omega t) \widehat{n}_L} = e^{iA\widehat{n}_L}= 1+iA\widehat{n}_L - A^{2} \widehat{n}_L*\widehat{n}_L +..
+\end{equation}
+
+with $A$=$z\sin(\omega t)$. Equation \ref{eq:13} is propotional to
+\begin{center}
+\begin{multline}  \label{eq:15}
+\widehat{U}(t)(   {\widehat{c}_{L}}^{\dagger} c_{C} ){\widehat{U}}^{\dagger}(t) = e^{iA\widehat{n}_L} {\widehat{c}_{L}}^{\dagger} c_{C} e^{-iA\widehat{n}_L}
+=(1+iA\widehat{n}_L -A^{2} \widehat{n}_L * \widehat{n}_L+..)   {\widehat{c}_{L}}^{\dagger} c_{C} e^{-iA \widehat{n}_L} 
+\\
+=   ({\widehat{c}_{L}}^{\dagger} +iA\widehat{n}_L {\widehat{c}_{L}}^{\dagger} -A^{2} \widehat{n}_L*\widehat{n}_L {\widehat{c}_{L}}^{\dagger}  +..)c_{C} e^{-iA\widehat{n}_L} 
+\\
+=   ({\widehat{c}_{L}}^{\dagger} +iA{\widehat{c}_{L}}^{\dagger}(\widehat{n}_L +1) - A^{2} \widehat{n}_L {\widehat{c}_{L}}^{\dagger} (\widehat{n}_L + 1)  +..) c_{C} e^{-iA\widehat{n}_L} 
+\\
+=   ({\widehat{c}_{L}}^{\dagger} +iA{\widehat{c}_{L}}^{\dagger}(\widehat{n}_L +1) - A^{2} {\widehat{c}_{L}}^{\dagger} (\widehat{n}_L + 1)^2  +..) c_{C} e^{-iA\widehat{n}_L}
+\\
+=   {\widehat{c}_{L}}^{\dagger} (1 +iA(\widehat{n}_L +1) - A^{2} (\widehat{n}_L + 1)^2  +..) c_{C} e^{-iA\widehat{n}_L}
+\\
+=  {\widehat{c}_{L}}^{\dagger}e^{iA(\widehat{n}_L+1)} c_{C}e^{-iA\widehat{n}_L}
+=   {\widehat{c}_{L}}^{\dagger} c_{C} e^{iA(\widehat{n}_L+1)}  
+e^{-iA\widehat{n}_L}=  {\widehat{c}_{L}}^{\dagger} c_{C} e^{iA} 
+\\
+\Rightarrow \widehat{U}(t)(   {\widehat{c}_{L}}^{\dagger} c_{C} ){\widehat{U}}^{\dagger}(t) =   {\widehat{c}_{L}}^{\dagger} c_{C} e^{ z\sin(\omega t)}
+\end{multline}
+\end{center}
+
+where we have used $N{\widehat{a}}^{\dagger} \vert n \rangle $ =$ {\widehat{a}}^{\dagger}(N +1)\vert n \rangle $.\\
+\\Next using the Jacobi-Anger expansion, 
+
+\begin{equation} \label{eq:16}
+e^{i z \sin(\theta)}= \sum_{\substack{n={-\infty}}}^\infty J_n ( z ) e^{i n \theta}
+\end{equation}
+
+we have $\widehat{U}(t)(\tau_{L,C}{\widehat{c}_{L}}^{\dagger} c_{C}){\widehat{U}}^{\dagger}(t)$= $\sum_{\substack{n={-\infty}}}^\infty J_n (z) \tau_{LC} e^{i n \omega t} {\widehat{c}_{L}}^{\dagger} c_{C} $. \\
+
+
+The same precedure follows for the hermitian conjugate where we used \\
+$N{\widehat{a}} \vert n \rangle $ =$ {\widehat{a}}(N - 1)\vert n \rangle$ and as a result  we have \\
+$\widehat{U}(t)( \tau_{CL}{\widehat{c}_{C}}^{\dagger} c_{L} ){\widehat{U}}^{\dagger}(t) = \tau_{CL}{\widehat{c}_{C}}^{\dagger} c_{L} e^{-iz\sin(\omega t)}$ and applying the relation of eq.16 with $z=  z$ and $\theta=-\omega t$ 
+
+\begin{multline} \label{eq:17}
+\widehat{U}(t)( \tau_{CL}{\widehat{c}_{C}}^{\dagger} c_{L} ){\widehat{U}}^{\dagger}(t) = \sum_{\substack{n={-\infty}}}^\infty J_n (\alpha) \tau_{CL} e^{- i n \omega t} {\widehat{c}_{C}}^{\dagger} c_{L} 
+\\
+=\sum_{\substack{n={\infty}}}^{-\infty} J_{-n} (\alpha) \tau_{CL} e^{ i n \omega t} {\widehat{c}_{C}}^{\dagger} c_{L} = \sum_{\substack{n=-\infty}}^{\infty} \overline{\tau}_{CL,n} e^{ i n \omega t} {\widehat{c}_{C}}^{\dagger} c_{L} 
+\end{multline}
+
+where we used the relation $ J_{-n}=(-1)^n J_n$ and define $\overline{\tau}_{CL,n}= (-1)^n J_n \overline{\tau}_{CL}$.
+
+So equation \ref{eq:4} becomes 
+
+\begin{equation} \label{eq:18}
+\widehat{\overline{H}}_{\tau}(t) = - \left\lbrace  \sum_{\substack{n={-\infty}}}^\infty J_n (\alpha) \tau_{LC} e^{i n \omega t} {\widehat{c}_{L}}^{\dagger} c_{C} + \tau_{CR}{\widehat{c}_{C}}^{\dagger} c_{R} + H.c. \right\rbrace 
+\end{equation}
+
+\subsection{Calculation of equation 1.5 and 1.6}  \label{subsection1.1.2}
+
+At the interaction picture and by using eq.\ref{eq:2} (with $\hbar=1$)we have 
+
+\begin{equation} \label{eq:19}
+\widehat{H_{\tau,I}}= e^{i\widehat{H_{\varepsilon}}t} \widehat{H_{\tau}} e^{-i\widehat{H_{\varepsilon}}t} = - e^{i\widehat{H_{\varepsilon}}t} \left\lbrace  \sum_{\substack{n={-\infty}}}^\infty \overline{\tau}_{LC,n} e^{i n \omega t} {\widehat{c}_{L}}^{\dagger} c_{C} + \tau_{C,R}{\widehat{c}_{C}}^{\dagger} c_{R} + H.c. \right\rbrace   e^{-i\widehat{H_{\varepsilon}}t} 
+\end{equation}
+
+From eq.\ref{eq:4} we have
+
+\begin{multline} \label{eq:20}
+U^{2}(t,0) \vert L \rangle =  - \int_{0}^{t} \mathrm{d}t_1 \int_{0}^{t_1} \mathrm{d}t_2  \widehat{H}_{\tau,I} (t_1) \widehat{H}_{\tau,I} (t_2) \vert L \rangle =
+ - \int_{0}^{t} \mathrm{d}t_1 \int_{0}^{t_1} \mathrm{d}t_2  \widehat{H}_{\tau,I} (t_1) e^{i\widehat{H_{\varepsilon}}t_2}  \widehat{H}_{\tau} (t_2) \vert L \rangle e^{-i\widehat{\varepsilon_{L}}t_2} 
+\end{multline}
+
+where  $\widehat{H}_{\tau} (t_2) \vert L \rangle = - \sum_{\substack{n=\infty}}^{-\infty} \overline{\tau}_{CL,n} e^{i n \omega t_2}  \vert C \rangle$ and continuing eq.\ref{eq:20} 
+
+\begin{multline} \label{eq:21}
+U^{2}(t,0) \vert L \rangle = -\int_{0}^{t} \mathrm{d}t_1 \int_{0}^{t_1} \mathrm{d}t_2  \widehat{H}_{\tau,I} (t_1) e^{i\widehat{H_{\varepsilon}}t_2} \left\lbrace - \sum_{\substack{n=\infty}}^{-\infty} \overline{\tau}_{CL,n} e^{i n \omega t_2}  \vert C \rangle \right\rbrace  e^{-i\widehat{\varepsilon_{L}}t_2} 
+\\
+= - \int_{0}^{t} \mathrm{d}t_1  e^{i\widehat{H_{\varepsilon}}t_1} \widehat{H_{\tau}} e^{-i\widehat{H_{\varepsilon}}t_1} \int_{0}^{t_1} \mathrm{d}t_2  e^{i\widehat{H_{\varepsilon}}t_2} \left\lbrace  - \sum_{\substack{n=\infty}}^{-\infty} \overline{\tau}_{CL,n} e^{i n \omega t_2}  \vert C \rangle \right\rbrace   e^{-i\widehat{\varepsilon_{L}}t_2} 
+\\
+= - \int_{0}^{t} \mathrm{d}t_1  e^{i\widehat{H_{\varepsilon}}t_1} \widehat{H_{\tau}}\vert C \rangle e^{-i\widehat{e_{C}}t_1} \int_{0}^{t_1} \mathrm{d}t_2  e^{i\widehat{\varepsilon_{C}}t_2} \left\lbrace - \sum_{\substack{n=\infty}}^{-\infty}  \overline{\tau}_{CL,n} e^{i n \omega t_2}  \right\rbrace  e^{-i\widehat{\varepsilon_{L}}t_2} 
+\\
+=\int_{0}^{t} \mathrm{d}t_1  e^{i\widehat{H_{\varepsilon}}t_1} \widehat{H_{\tau}} \vert C \rangle e^{-i\widehat{e_{C}}t_1} \int_{0}^{t_1} \mathrm{d}t_2   \left\lbrace \sum_{\substack{n=\infty}}^{-\infty} \overline{\tau}_{CL,n} e^{i(\varepsilon_C -\varepsilon_L + n \omega )t_2} \right\rbrace
+\end{multline}
+
+where  $\widehat{H}_{\tau} (t_1) \vert C \rangle = - \sum_{\substack{n=\infty}}^{-\infty} \overline{\tau}_{LC,n'} e^{i n' \omega t_1}  \vert L \rangle - \tau_{RC} \vert R \rangle $ and continuing eq.\ref{eq:21}
+
+
+\begin{multline} \label{eq:22}
+U^{2}(t,0) \vert L \rangle = 
+\\
+-\int_{0}^{t} \mathrm{d}t_1  e^{i\widehat{H_{\varepsilon}}t_1} \left\lbrace \sum_{\substack{n'=\infty}}^{-\infty} \overline{\tau}_{LC,n'} e^{i n' \omega t_1}  \vert L \rangle + \tau_{RC} \right\rbrace  e^{-i\widehat{e_{C}}t_1} \sum_{\substack{n={-\infty}}}^{\infty} \overline{\tau}_{CL,n} \left\lbrace \frac{e^{i(\varepsilon_C -\varepsilon_L + n \omega )t_1} -1}{ (\varepsilon_C -\varepsilon_L + n \omega )i} \right\rbrace 
+\\
+=-\int_{0}^{t} \mathrm{d}t_1 \sum_{\substack{n'={-\infty}}}^{\infty} \overline{\tau}_{LC,n'} e^{i(\varepsilon_L-\varepsilon_C+ n' \omega) t_1}   \sum_{\substack{n=-\infty}}^{\infty} \overline{\tau}_{CL,n} \left\lbrace \frac{e^{i(\varepsilon_C -\varepsilon_L + n \omega )t_1} -1}{ (\varepsilon_C -\varepsilon_L + n \omega )i} \right\rbrace  \vert L \rangle
+\\
+-\int_{0}^{t} \mathrm{d}t_1 \tau_{RC} e^{i(\varepsilon_R-{\varepsilon}_C) t_1} \sum_{\substack{n=-\infty}}^{\infty} \overline{\tau}_{CL,n} \left\lbrace \frac{e^{i(\varepsilon_C -\varepsilon_L + n \omega )t_1} -1}{ (\varepsilon_C -\varepsilon_L + n \omega )i} \right\rbrace \vert R \rangle
+\\
+=+i\int_{0}^{t} \mathrm{d}t_1 \sum_{\substack{n'=-\infty}}^{\infty} {\overline{\tau}_{LC,n'}} \sum_{\substack{n=-\infty}}^{\infty}   \frac {\overline{\tau}_{CL,n}} { \varepsilon_C -\varepsilon_L + n \omega } \left\lbrace e^{(n+n')\omega t_1} - e^{i(\varepsilon_L-\varepsilon_C+ n' \omega) t_1} \right\rbrace \vert L \rangle
+\\ 
++i\int_{0}^{t} \mathrm{d}t_1 \tau_{RC} \sum_{\substack{n=-\infty}}^{\infty} \frac{\overline{\tau}_{CL,n} } { \varepsilon_C -\varepsilon_L + n \omega } \left\lbrace  e^{i(\varepsilon_{R}-\varepsilon_{L}+n \omega )t_1} - e^{i(\varepsilon_R-\varepsilon_C)t_1} \right\rbrace  \vert R \rangle
+\\
+\Rightarrow U^{2}(t,0) \vert L \rangle = \sum_{\substack{n=-\infty}}^{\infty} \frac{\overline{\tau}_{CL,n} } { \varepsilon_C -\varepsilon_L + n \omega } [ 
+  \sum_{n'} \overline{\tau}_{LC,n'} \left(  \dfrac{ e^{ i (n+n')\omega t } -1}{ ( n+n' ) \omega } - \dfrac{ e^{i ( \varepsilon_L - \varepsilon_C + n'\omega ) t } - 1 } { \varepsilon_L - \varepsilon_C + n'  \omega  } \right)    \vert L \rangle 
+\\
++\tau_{RC} \left(  \dfrac{ e^{i ( \varepsilon_R - \varepsilon_L + n \omega )  t } - 1 } { \varepsilon_R - \varepsilon_L + n \omega  } - \frac{ e^{i ( \varepsilon_R - \varepsilon_C )  t } - 1 } { \varepsilon_R - \varepsilon_C } \right)  \vert R \rangle ] 
+\end{multline}
+
+The same precedure follows for the $\Rightarrow U^{2}(t,0) \vert R \rangle $ and we have the following result:
+\\
+
+\begin{multline} \label{eq:23}
+U^{2}(t,0) \vert R \rangle = \sum_{\substack{n'=-\infty}}^{\infty} \frac{\overline{\tau}_{LC,n'} {\tau}_{CR}  } { \varepsilon_C -\varepsilon_R } [ \left(  \dfrac{ e^{i ( \varepsilon_L - \varepsilon_R + n'\omega ) t } - 1 } { \varepsilon_L - \varepsilon_R + n'  \omega  } - \dfrac{ e^{i ( \varepsilon_L - \varepsilon_C + n'\omega ) t } - 1 } { \varepsilon_L - \varepsilon_C + n'  \omega  } \right)    \vert L \rangle 
+\\
++ \dfrac{ \tau_{RC} \tau_{CR} }{ \varepsilon_C - \varepsilon_R } \left(  \dfrac{t}{i}- \frac{ e^{i ( \varepsilon_R - \varepsilon_C )  t } - 1 } { \varepsilon_R - \varepsilon_C } \right)  \vert R \rangle ] 
+\end{multline}
+
+\subsection{Calculation of equation 1.11} \label{subsection1.1.3}
+
+At the matrix representation equation $\widehat{H}_{RWA}$= $V^{\dagger} (\widehat{H}_{eff}-i\hbar\partial_t) V$ , with the unitary vector $V$ = ${\widehat{c}_{L}}^{\dagger} c_{L}$ + $e^{-i\nu\omega t} {\widehat{c}_{R}}^{\dagger} c_{R}$  is ($\bar=1$)
+
+\begin{multline*}
+\widehat{H}_{RWA}=\begin{bmatrix}
+ & 1 & 0 
+\\
+& 0 & e^{+in\omega t}
+\end{bmatrix}
+\left\lbrace  \begin{bmatrix}
+\overline{\varepsilon}_{L}
+& -\sum_{\nu'}{g_{LR,\nu'} } e^{ i \nu'\omega t }
+ \\ 
+ \\
+-\sum_{\nu}{g_{LR,\nu} } e^{  i \nu\omega t } 
+& \overline{\varepsilon}_{R}
+\end{bmatrix} 
+-i\hbar\partial_t \right\rbrace 
+\begin{bmatrix}
+ & 1 & 0 
+\\
+& 0 & e^{-in\omega t}
+\end{bmatrix}
+\\
+=\begin{bmatrix}
+ & 1 & 0 
+\\
+& 0 & e^{+in\omega t}
+\end{bmatrix}
+\begin{bmatrix}
+\overline{\varepsilon}_{L}
+& -e^{ - i n \omega t } \sum_{\nu'}{g_{LR,\nu'} } e^{ i \nu'\omega t }
+ \\ 
+ \\
+-\sum_{\nu}{g_{LR,\nu} } e^{  i \nu\omega t } 
+& (\overline{\varepsilon}_{R}-\hbar n \omega)e^{ - i n \omega t }
+\end{bmatrix} 
+\\
+=\begin{bmatrix}
+\overline{\varepsilon}_{L}
+& -e^{ - i n \omega t } \sum_{\nu'}{g_{LR,\nu'} } e^{ i \nu'\omega t }
+ \\ 
+ \\
+-e^{ + i n \omega t } \sum_{\nu}{g_{LR,\nu} } e^{  i \nu\omega t } 
+& e^{ + i n \omega t } (\overline{\varepsilon}_{R}-\hbar n \omega)e^{ - i n \omega t }
+\end{bmatrix} 
+\\
+=\begin{bmatrix}
+\overline{\varepsilon}_{L}
+& -e^{ - i n \omega t } \sum_{\nu'}{g_{LR,\nu'} } e^{ i \nu'\omega t }
+ \\ 
+ \\
+-e^{ + i n \omega t } \sum_{\nu}{g_{LR,\nu} } e^{ - i \nu\omega t } 
+& \overline{\varepsilon}_{R}-\hbar n \omega
+\end{bmatrix} 
+\end{multline*}
+
+\begin{multline} \label{eq:24}
+\widehat{H}_{RWA}= \begin{bmatrix}
+\varepsilon_L - \sum_{\nu} \sum_{\nu'} {\dfrac { \overline{\tau}_{LC,\nu'} \overline{\tau}_{CL,\nu} } {\varepsilon_C - \varepsilon_L + \nu \omega} e^{ i (\nu+\nu')\omega t } }
+& -e^{ - i n \omega t }\sum_{\nu'} { \dfrac{  \overline{\tau}_{LC,\nu'} {\tau}_{CR} } {\varepsilon_C - \varepsilon_R} e^{ i \nu'\omega t }}
+\\
+\\
+-e^{ + i n \omega t }\sum_{\nu}{\dfrac{ {\tau}_{RC} \overline{\tau}_{CL,\nu}  } {\varepsilon_C - \varepsilon_L + \nu \omega } e^{ -i \nu\omega t }} 
+& \varepsilon_R - \dfrac{\tau_{RC} \tau_{CR} }{ \varepsilon_C - \varepsilon_ R }
+\end{bmatrix} 
+\end{multline}
+
+The summation $ \sum_{\nu'} {g_{LR,\nu'}}$ =$ \sum_{\nu'} { \dfrac { \overline{ \tau}_{LC,\nu'} \tau_{RC} }{ \varepsilon_C-\varepsilon_R}}$ can be replaced by $ \sum_{\nu'} { \dfrac{\overline{\tau}_{LC,\nu'}\tau_{RC}} {\varepsilon_C-\varepsilon_L -\nu'\omega} }$ since we are close to the resonance condition $\varepsilon_R-\varepsilon_L -\nu'\omega=0$.
+
+
+At the case where the initial and final virtual states are degenerate ( $\overline{\varepsilon}_{R}=\overline{\varepsilon}_{L}+ n \omega $) then the total number of photons participating at the transition is zero, $\nu+\nu'=0$. Then the sum can be approximated by the single term n since it has the smaller energy denominator. (Loss) Applying  $\nu=-n$ and  $\nu'=n$ at the eq.\ref{eq:24} we arrive at
+
+\begin{equation}  \label{eq:25}
+\widehat{H}_{RWA}=\begin{bmatrix}
+\overline{\varepsilon}_{L}
+& {-g_{LR,n} }
+ \\ 
+ \\
+{-g_{RL,n} } 
+& \overline{\varepsilon}_{R}-\hbar n \omega
+\end{bmatrix} 
+\end{equation}
+
+
+where 
+
+\begin{multline*}
+\overline{\varepsilon}_L = \varepsilon_L - \sum_{\nu} \sum_{\nu'}  \dfrac  {\overline{\tau}_{LC,\nu'} \overline{\tau}_{CL,\nu}}  {\varepsilon_C - \varepsilon_L + \nu \omega} e^{ i (\nu+\nu')\omega t} 
+= \varepsilon_L- \dfrac  {\overline{\tau}_{LC,n} \overline{\tau}_{CL,-n}}  {\varepsilon_C - \varepsilon_L - n \omega} 
+\\=  \varepsilon_L - \dfrac{J_{n}^2 \tau_{LC} \tau_{CL}}{\varepsilon_C - \varepsilon_L - n \omega}
+\end{multline*}
+
+since $\overline{\tau}_{LC,n} = J_n (\alpha) \tau_{LC} $ , $\overline{\tau}_{CL,n}= (-1)^{n} J_n (\alpha) \tau_{CL}$ , $J_{-n}=(-1)^n J_n$ and\\
+\\
+
+
+ $\overline{\varepsilon}_{R} = \varepsilon_R - \dfrac{\tau_{RC}\tau_{CR} }{ \varepsilon_C - \varepsilon_ R }$ ,  $ g_{LR,n} =  \dfrac {\overline{\tau}_{LC,\nu} \tau_{CR} } {\varepsilon_C - \varepsilon_L - \nu \hbar \omega}$ ,  $ g_{RL,n} =  \dfrac {\tau_{RC} \overline{\tau}_{CL,-\nu}  } {\varepsilon_C - \varepsilon_L - \nu \hbar \omega}$ 
